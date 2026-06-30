@@ -1,0 +1,85 @@
+<section class="container mt-5 mb-5">
+
+  <form [formGroup]="formRegistro" (ngSubmit)="registrar()" class="p-4 rounded shadow" style="background: var(--color-tarjeta);">
+
+    <h2 class="text-center mb-4 titulo-articulo">Únete a Boleham & Co ✨</h2>
+
+    <!-- NOMBRE COMPLETO -->
+    <div class="mb-3">
+      <label class="form-label">Nombre completo</label>
+      <input type="text" class="form-control" formControlName="nombreCompleto">
+      <small class="text-danger" *ngIf="formRegistro.get('nombreCompleto')?.touched && formRegistro.get('nombreCompleto')?.invalid">
+        Este campo es obligatorio.
+      </small>
+    </div>
+
+    <!-- USUARIO -->
+    <div class="mb-3">
+      <label class="form-label">Nombre de usuario</label>
+      <input type="text" class="form-control" formControlName="nombreUsuario">
+      <small class="text-danger" *ngIf="formRegistro.get('nombreUsuario')?.touched && formRegistro.get('nombreUsuario')?.invalid">
+        Este campo es obligatorio.
+      </small>
+    </div>
+
+    <!-- CORREO -->
+    <div class="mb-3">
+      <label class="form-label">Correo electrónico</label>
+      <input type="email" class="form-control" formControlName="correo">
+      <small class="text-danger" *ngIf="formRegistro.get('correo')?.touched && formRegistro.get('correo')?.errors?.['email']">
+        Debe ser un correo válido.
+      </small>
+    </div>
+
+    <!-- FECHA DE NACIMIENTO -->
+    <div class="mb-3">
+      <label class="form-label">Fecha de nacimiento</label>
+      <input type="date" class="form-control" formControlName="fechaNacimiento">
+      <small class="text-danger" *ngIf="formRegistro.get('fechaNacimiento')?.touched && formRegistro.get('fechaNacimiento')?.errors?.['edadMinima']">
+        Debes tener al menos 13 años.
+      </small>
+    </div>
+
+    <!-- DIRECCIÓN -->
+    <div class="mb-3">
+      <label class="form-label">Dirección de despacho (opcional)</label>
+      <input type="text" class="form-control" formControlName="direccion">
+    </div>
+
+    <!-- CONTRASEÑA -->
+    <div class="mb-3">
+      <label class="form-label">Contraseña</label>
+      <input type="password" class="form-control" formControlName="clave">
+      <small class="text-danger" *ngIf="formRegistro.get('clave')?.touched && formRegistro.get('clave')?.errors?.['passwordSegura']">
+        Debe tener una mayúscula, un número y entre 6 y 18 caracteres.
+      </small>
+    </div>
+
+    <!-- CONFIRMAR CONTRASEÑA -->
+    <div class="mb-3">
+      <label class="form-label">Confirmar contraseña</label>
+      <input type="password" class="form-control" formControlName="clave2">
+      <small class="text-danger" *ngIf="formRegistro.errors?.['contraseñasNoCoinciden'] && formRegistro.get('clave2')?.touched">
+        Las contraseñas no coinciden.
+      </small>
+    </div>
+
+    <!-- BOTONES -->
+    <div class="d-flex gap-3 mt-4">
+      <button type="submit" class="boton-animado w-50">
+        Registrarse ✨
+      </button>
+
+      <button type="button" class="boton-animado w-50" (click)="limpiar()">
+        Limpiar 🧹
+      </button>
+    </div>
+
+    <p class="mt-4 text-center">
+      ¿Ya tienes cuenta?
+      <a routerLink="/login" class="link-nav">Inicia sesión aquí</a>
+    </p>
+
+  </form>
+
+</section>

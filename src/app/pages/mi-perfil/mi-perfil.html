@@ -1,0 +1,50 @@
+<section class="container mt-5 mb-5">
+
+  <div class="p-4 rounded shadow" style="background: var(--color-tarjeta);">
+
+    <h2 class="text-center mb-4 titulo-articulo">Tu información personal ✨</h2>
+
+    <div class="mb-3">
+      <strong>Nombre completo:</strong>
+      <p>{{ usuario?.nombreCompleto }}</p>
+    </div>
+
+    <div class="mb-3">
+      <strong>Nombre de usuario:</strong>
+      <p>{{ usuario?.nombreUsuario }}</p>
+    </div>
+
+    <div class="mb-3">
+      <strong>Correo electrónico:</strong>
+      <p>{{ usuario?.correo }}</p>
+    </div>
+
+    <div class="mb-3">
+      <strong>Dirección:</strong>
+      <p>{{ usuario?.direccion || 'No registrada' }}</p>
+    </div>
+
+    <div class="mb-3">
+      <strong>Rol asignado:</strong>
+      <p>{{ usuario?.rol }}</p>
+    </div>
+
+    <div class="d-flex gap-3 mt-4">
+      <a routerLink="/modificar-perfil" class="boton-animado w-50 text-center">
+        Modificar perfil 🛠️
+      </a>
+
+      <button class="boton-animado w-50" (click)="cerrarSesion()">
+        Cerrar sesión 🚪
+      </button>
+    </div>
+
+  </div>
+
+  <div class="d-flex mt-3">
+    <a routerLink="/" class="boton-animado w-100 text-center">
+      Volver al inicio 🏠
+    </a>
+  </div>
+
+</section>

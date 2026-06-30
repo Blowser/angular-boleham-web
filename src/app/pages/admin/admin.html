@@ -1,0 +1,28 @@
+<section class="container mt-5 mb-5">
+
+  <div class="p-4 rounded shadow" style="background: var(--color-tarjeta);">
+
+    <h2 class="text-center mb-4 titulo-articulo">Gestión básica ✨</h2>
+
+    <p class="mb-3">
+      Aquí el administrador puede revisar la lista de usuarios registrados.
+    </p>
+
+    <!-- LISTA DE USUARIOS -->
+    <div *ngIf="usuarios.length === 0">
+      No hay usuarios registrados.
+    </div>
+
+    <ul *ngIf="usuarios.length > 0" class="list-group">
+      <li *ngFor="let u of usuarios" class="list-group-item">
+        {{ u.nombreCompleto }} ({{ u.nombreUsuario }}) - {{ u.correo }} [{{ u.rol }}]
+      </li>
+    </ul>
+
+    <button class="boton-animado mt-4 w-100" (click)="cerrarSesion()">
+      Cerrar sesión 🚪
+    </button>
+
+  </div>
+
+</section>
