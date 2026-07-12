@@ -1,36 +1,20 @@
 {
   "productos": [
     {
-      "id": 1,
-      "nombre": "Solo Leveling Vol. 1",
-      "categoria": "Mangas",
-      "precio": 24990,
-      "imagen": "solo-leveling.jpg",
-      "descripcion": "Manhwa de acción con portales dimensionales."
-    },
-    {
-      "id": 2,
-      "nombre": "Plushie Gatito Rosa",
-      "categoria": "Plushies",
-      "precio": 12990,
-      "imagen": "gatito-rosa.jpg",
-      "descripcion": "Plushie suave y adorable."
-    },
-    {
-      "id": 3,
-      "nombre": "Set de Acuarelas Van Gogh",
-      "categoria": "Arte",
-      "precio": 45990,
-      "imagen": "acuarelas-vg.jpg",
-      "descripcion": "Set profesional de acuarelas con 24 colores."
-    },
-    {
-      "id": 4,
-      "nombre": "Preventa: Dan Da Dan Vol. 1",
+      "id": 13,
+      "nombre": "Grandmaster of Demonic Cultivation 01 (Mo Dao Zu Shi)",
       "categoria": "Preventas",
-      "precio": 9990,
-      "imagen": "dandadan.jpg",
-      "descripcion": "Preventa exclusiva del primer volumen."
+      "precio": 33990,
+      "imagen": "mo_dao_zu_shi.jpg",
+      "descripcion": "Wei Wuxian fue uno de los fundadores del cultivo demoníaco. Tras su muerte resucita en el cuerpo de otro hombre y aprovecha este giro para llevar a cabo la venganza que no pudo completar en vida. Editorial: Norma. Autor: Mo Xiang Tong Xiu. Demografía: Acción, BL, Fantasía, Sobrenatural. Tipo: Manhua/Novela."
+    },
+    {
+      "id": 14,
+      "nombre": "La Bendición del Oficial del Cielo Frame Art 01",
+      "categoria": "Preventas",
+      "precio": 29990,
+      "imagen": "heaven-official-blessing.jpg",
+      "descripcion": "Adaptación oficial de Heaven Official's Blessing. Xie Lian, príncipe heredero de Xianle, asciende por tercera vez como recolector de chatarra y se une a San Lang en un viaje lleno de destino, fantasía y misterio. Tipo: Manhua."
     }
   ]
 }
