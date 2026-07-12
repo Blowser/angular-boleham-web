@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule, DecimalPipe } from '@angular/common';
 
@@ -14,7 +14,8 @@ import { Producto } from '../../models/producto.model';
     DecimalPipe     // ← Necesario para el pipe number
   ],
   templateUrl: './home.html',
-  styleUrl: './home.scss'
+  styleUrls: ['./home.scss'],
+  encapsulation: ViewEncapsulation.None   // ⭐ ESTA ES LA CLAVE
 })
 export class Home implements OnInit {
 
