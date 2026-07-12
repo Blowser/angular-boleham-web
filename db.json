@@ -15,6 +15,22 @@
       "precio": 12990,
       "imagen": "gatito-rosa.jpg",
       "descripcion": "Plushie suave y adorable."
+    },
+    {
+      "id": 3,
+      "nombre": "Set de Acuarelas Van Gogh",
+      "categoria": "Arte",
+      "precio": 45990,
+      "imagen": "acuarelas-vg.jpg",
+      "descripcion": "Set profesional de acuarelas con 24 colores."
+    },
+    {
+      "id": 4,
+      "nombre": "Preventa: Dan Da Dan Vol. 1",
+      "categoria": "Preventas",
+      "precio": 9990,
+      "imagen": "dandadan.jpg",
+      "descripcion": "Preventa exclusiva del primer volumen."
     }
   ]
 }
