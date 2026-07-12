@@ -1,0 +1,20 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Solo Leveling Vol. 1",
+      "categoria": "Mangas",
+      "precio": 24990,
+      "imagen": "solo-leveling.jpg",
+      "descripcion": "Manhwa de acción con portales dimensionales."
+    },
+    {
+      "id": 2,
+      "nombre": "Plushie Gatito Rosa",
+      "categoria": "Plushies",
+      "precio": 12990,
+      "imagen": "gatito-rosa.jpg",
+      "descripcion": "Plushie suave y adorable."
+    }
+  ]
+}
