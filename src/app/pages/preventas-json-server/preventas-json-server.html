@@ -1,0 +1,47 @@
+<section class="container mt-5 mb-5">
+
+  <h2 class="titulo-articulo text-center mb-4">Preventas (API Local)</h2>
+
+  <!-- FORMULARIO -->
+  <div class="p-4 rounded shadow mb-4" style="background: var(--color-tarjeta);">
+
+    <h4>{{ editando ? 'Editar preventa' : 'Crear preventa' }}</h4>
+
+    <form (ngSubmit)="guardar()">
+
+      <input class="form-control mb-2" type="text" placeholder="Nombre"
+             [(ngModel)]="formulario.nombre" name="nombre" required>
+
+      <input class="form-control mb-2" type="number" placeholder="Precio"
+             [(ngModel)]="formulario.precio" name="precio" required>
+
+      <input class="form-control mb-2" type="text" placeholder="Imagen"
+             [(ngModel)]="formulario.imagen" name="imagen" required>
+
+      <textarea class="form-control mb-2" placeholder="Descripción"
+                [(ngModel)]="formulario.descripcion" name="descripcion" required></textarea>
+
+      <button class="boton-animado w-100 mt-2">
+        {{ editando ? 'Actualizar preventa' : 'Crear preventa' }}
+      </button>
+
+    </form>
+  </div>
+
+  <!-- LISTA -->
+  <ul class="list-group">
+    <li *ngFor="let p of productos" class="list-group-item d-flex justify-content-between align-items-center">
+
+      <div>
+        <strong>{{ p.nombre }}</strong> — ${{ p.precio | number }}
+      </div>
+
+      <div>
+        <button class="btn btn-warning btn-sm me-2" (click)="editar(p)">Editar</button>
+        <button class="btn btn-danger btn-sm" (click)="eliminar(p.id)">Eliminar</button>
+      </div>
+
+    </li>
+  </ul>
+
+</section>
