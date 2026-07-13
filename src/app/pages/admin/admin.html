@@ -26,9 +26,20 @@
   </div>
 
 </section>
+
 <hr class="my-5">
 
 <h2 class="text-center mb-4 titulo-articulo">Gestión de Productos 🛒</h2>
+
+<!-- FILTRO POR CATEGORÍA -->
+<select class="form-select mb-3" [(ngModel)]="filtroCategoria">
+  <option value="">Todos los productos</option>
+  <option value="Preventas">Preventas</option>
+  <option value="Libros">Libros</option>
+  <option value="Comics">Comics</option>
+  <option value="Plushies">Plushies</option>
+  <option value="Accesorios">Accesorios</option>
+</select>
 
 <!-- FORMULARIO -->
 <div class="p-3 rounded mb-4" style="background: var(--color-tarjeta);">
@@ -61,7 +72,8 @@
 
 <!-- LISTA DE PRODUCTOS -->
 <ul class="list-group">
-  <li *ngFor="let p of productos" class="list-group-item d-flex justify-content-between align-items-center">
+  <li *ngFor="let p of productos | categoryFilter:filtroCategoria"
+      class="list-group-item d-flex justify-content-between align-items-center">
 
     <div>
       <strong>{{ p.nombre }}</strong> — {{ p.categoria }} — ${{ p.precio }}
