@@ -15,6 +15,22 @@
       "precio": 29990,
       "imagen": "heaven_official_blessing.webp",
       "descripcion": "Adaptación oficial de Heaven Official's Blessing. Xie Lian, príncipe heredero de Xianle, asciende por tercera vez como recolector de chatarra y se une a San Lang en un viaje lleno de destino, fantasía y misterio. Tipo: Manhua."
+    },
+    {
+      "id": 15,
+      "nombre": " Indómito: Sa Ye 01 – Editorial Norma",
+      "categoria": "Manhua",
+      "precio": 37990,
+      "imagen": "sa_ye_01",
+      "descripcion": "¡El inicio de un vínculo inquebrantable! En Indómito: Sa Ye 01, el brillante Jiang Cheng es obligado a mudarse a una lúgubre ciudad industrial con su problemático padre biológico. Allí conocerá al rebelde Gu Fei, un joven con sus propias cicatrices. Juntos, intentarán sobrevivir a un entorno opresivo y forjarán una conexión única. Descubre la aclamada novela de Wu Zhe con la cuidada edición de Norma Editorial."
+    },
+    {
+      "id": 16,
+      "nombre": "",
+      "categoria": "",
+      "precio": 0,
+      "imagen": "",
+      "descripcion": ""
     }
   ]
 }
