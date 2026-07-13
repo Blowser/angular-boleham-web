@@ -6,17 +6,20 @@ import { Usuario } from '../../models/usuario.model';
 import { Producto } from '../../models/producto.model';
 import { ProductosService } from '../../services/productos.service';
 
+// Pipe para filtrar categorías
+import { CategoryFilterPipe } from '../../pipes/filtrar-categoria';
+
 @Component({
   selector: 'app-admin',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, CategoryFilterPipe],
   templateUrl: './admin.html',
   styleUrl: './admin.scss'
 })
 export class Admin implements OnInit {
 
   // -------------------------
-  // USUARIOS (ya lo tenías)
+  // USUARIOS
   // -------------------------
   usuarios: Usuario[] = [];
   cantidadUsuarios = 0;
@@ -26,6 +29,9 @@ export class Admin implements OnInit {
   // -------------------------
   productos: Producto[] = [];
   editandoProducto = false;
+
+  // FILTRO POR CATEGORÍA
+  filtroCategoria = '';
 
   formularioProducto: Producto = {
     id: 0,
