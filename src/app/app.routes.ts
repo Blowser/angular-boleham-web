@@ -34,4 +34,9 @@ export const routes: Routes = [
   { path: 'mi-perfil', component: MiPerfil },
   { path: 'modificar-perfil', component: ModificarPerfil },
   
+
+  {path: 'preventas-json-server',
+    loadComponent: () => import('./pages/preventas-json-server/preventas-json-server').then(m => m.PreventasJsonServer)
+  }
+
 ];
