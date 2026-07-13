@@ -2,10 +2,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Producto } from '../models/producto.model';
 
 @Pipe({
-  name: 'categoryFilter',
+  name: 'filtrarCategoria',
   standalone: true
 })
-export class CategoryFilterPipe implements PipeTransform {
+export class FiltrarCategoriaPipe implements PipeTransform {
 
   transform(productos: Producto[], categoria: string): Producto[] {
     if (!categoria) return productos;
