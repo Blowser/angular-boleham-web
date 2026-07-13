@@ -7,12 +7,13 @@ import { Producto } from '../../models/producto.model';
 import { ProductosService } from '../../services/productos.service';
 
 // Pipe para filtrar categorías
-import { CategoryFilterPipe } from '../../pipes/filtrar-categoria';
+import { FiltrarCategoriaPipe } from '../../pipes/filtrar-categoria.pipe';
+
 
 @Component({
   selector: 'app-admin',
   standalone: true,
-  imports: [CommonModule, FormsModule, CategoryFilterPipe],
+  imports: [CommonModule, FormsModule, FiltrarCategoriaPipe],
   templateUrl: './admin.html',
   styleUrl: './admin.scss'
 })
