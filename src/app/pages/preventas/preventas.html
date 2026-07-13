@@ -1,0 +1,24 @@
+<section class="container mt-5 mb-5">
+
+  <h2 class="titulo-articulo text-center mb-4">Preventas</h2>
+
+  <div class="row g-4">
+
+    <div class="col-12 col-md-6 col-lg-3" *ngFor="let p of preventas">
+      <article class="producto-card aparecer">
+
+        <img [src]="'/assets/img/preventas/' + p.imagen" [alt]="p.nombre">
+
+        <h3>{{ p.nombre }}</h3>
+        <p class="precio">${{ p.precio | number }}</p>
+
+        <a [routerLink]="['/producto', p.id]" class="btn btn-primary">
+          Ver más
+        </a>
+
+      </article>
+    </div>
+
+  </div>
+
+</section>
