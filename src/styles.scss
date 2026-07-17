@@ -605,6 +605,21 @@ html[ng-server] *[class*="aparecer-lado"] {
 }
 
 
+/* menú desplegable de mi perifl*/
+.menu-item {
+  position: relative;
+}
 
+.menu-item .subcategorias {
+  display: none;
+  position: absolute;
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.menu-item:hover .subcategorias {
+  display: block;
+}
 
 
