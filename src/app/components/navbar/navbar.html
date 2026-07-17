@@ -10,10 +10,26 @@
         <li><a routerLink="/categorias/accesorios">Accesorios</a></li>
       </ul>
     </li>
+
     <li><a class="link-nav" routerLink="/preventas">Preventas</a></li>
-    <li><a class="link-nav" routerLink="/proximamente">Mi cuenta</a></li>
+
+    <!-- ⭐ MENÚ MI CUENTA (solo si hay sesión) -->
+    <li class="menu-item" *ngIf="auth.sesion">
+      <span class="link-nav">Mi cuenta</span>
+
+      <ul class="subcategorias">
+        <li><a routerLink="/mi-perfil">Mi perfil</a></li>
+        <li><a routerLink="/modificar-perfil">Modificar perfil</a></li>
+        <li><a (click)="auth.cerrarSesion()">Cerrar sesión</a></li>
+      </ul>
+    </li>
+
+    <!-- ⭐ Si NO hay sesión, mostrar login -->
+    <li *ngIf="!auth.sesion">
+      <a class="link-nav" routerLink="/login">Iniciar sesión</a>
+    </li>
+
     <li><a class="link-nav" routerLink="/visitanos">Visítanos</a></li>
     <li><a class="link-nav" routerLink="/wishlist">Wishlist</a></li>
   </ul>
 </nav>
-
