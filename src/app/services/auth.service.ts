@@ -85,6 +85,7 @@ export class AuthService {
     const sesion: SesionUsuario = {
       id: usuario.id,
       nombreCompleto: usuario.nombreCompleto,
+      nombreUsuario: usuario.nombreUsuario,   // ← AGREGAR ESTO
       correo: usuario.correo,
       rol: usuario.rol,
       logueado: true
