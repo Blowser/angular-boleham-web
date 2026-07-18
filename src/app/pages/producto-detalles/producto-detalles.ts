@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 
@@ -10,7 +10,8 @@ import { Producto } from '../../models/producto.model';
   standalone: true,
   imports: [CommonModule, RouterLink],
   templateUrl: './producto-detalles.html',
-  styleUrl: './producto-detalles.scss'
+  styleUrl: './producto-detalles.scss',
+  changeDetection: ChangeDetectionStrategy.Default
 })
 export class ProductoDetalles implements OnInit {
 
