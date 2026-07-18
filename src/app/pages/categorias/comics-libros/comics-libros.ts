@@ -5,6 +5,7 @@ import { RouterLink } from '@angular/router';
 import { ProductosService } from '../../../services/productos.service';
 import { Producto } from '../../../models/producto.model';
 import { CarritoService } from '../../../services/carrito.service';
+import { WishlistService } from '../../../services/wishlist.service';
 
 @Component({
   selector: 'app-comics-libros',
@@ -19,7 +20,8 @@ export class ComicsLibros implements OnInit {
 
   constructor(
     private productosService: ProductosService,
-    private carrito: CarritoService
+    private carrito: CarritoService,
+    private wishlist: WishlistService
   ) {}
 
   ngOnInit(): void {
@@ -38,4 +40,10 @@ export class ComicsLibros implements OnInit {
     this.carrito.agregar(producto);
     console.log('🛒 Producto agregado:', producto.nombre);
   }
+  
+  agregarWishlist(producto: Producto): void {
+  this.wishlist.agregar(producto);
+  console.log('💖 Wishlist → agregado:', producto.nombre);
+  }
+
 }
