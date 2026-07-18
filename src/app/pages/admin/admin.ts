@@ -9,7 +9,6 @@ import { ProductosService } from '../../services/productos.service';
 // Pipe para filtrar categorías
 import { FiltrarCategoriaPipe } from '../../pipes/filtrar-categoria.pipe';
 
-
 @Component({
   selector: 'app-admin',
   standalone: true,
@@ -34,13 +33,15 @@ export class Admin implements OnInit {
   // FILTRO POR CATEGORÍA
   filtroCategoria = '';
 
+  // FORMULARIO DE PRODUCTO (incluye descuento)
   formularioProducto: Producto = {
     id: 0,
     nombre: '',
     categoria: '',
     precio: 0,
     imagen: '',
-    descripcion: ''
+    descripcion: '',
+    descuento: null   // ← agregado
   };
 
   constructor(private productosService: ProductosService) {
@@ -103,7 +104,8 @@ export class Admin implements OnInit {
       categoria: '',
       precio: 0,
       imagen: '',
-      descripcion: ''
+      descripcion: '',
+      descuento: null   // ← agregado
     };
   }
 
