@@ -48,6 +48,10 @@
           </h2>
 
         </li>
+        <li><a routerLink="/wishlist" class="nav-item">
+          💖 Wishlist ({{ wishlist.obtenerItems().length }})
+        </a>
+        </li>
 
         <li><a routerLink="/carrito" class="nav-item">
           🛒 Ver Carrito ({{ carrito.obtenerItems().length }})
