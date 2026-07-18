@@ -28,6 +28,34 @@
       
       "imagen": "assets/img/productos/dan_da_dan_01.webp"
     },
+        {
+      "id": 4,
+      "nombre": "Royal Talens Ecoline - Set 30 Marcadores Brush Pen",
+      "descripcion": "Las populares pinturas acuarela Ecoline ahora vienen en formato Lápiz Pincel.",
+      "precio": 104990,
+      "descuento": 102990,
+      "categoria": "ArteMateriales",
+      "imagen": "assets/img/productos/royal_talens_ecoline_set_30_marcadores_brush_pen.webp"
+    },
+    {
+      "id": 5,
+      "nombre": "Pentel Arts Aquash Water Brushes - Set de 4",
+      "descripcion": "Pinceles rellenable ideales para mezclar acuarelas, gouache o tinta.",
+      "precio": 8990,
+      "descuento": null,
+      "categoria": "ArteMateriales",
+      "imagen": "assets/img/productos/Pentel_Arts_Aquash_Water_Brushes_Set_de_4.jpg"
+    },
+    {
+      "id": 6,
+      "nombre": "Hahnemühle Toned Watercolour Book",
+      "descripcion": "Sketchbook de papel beige 200 g/m2 con textura fina ideal para acuarela.",
+      "precio": 15990,
+      "descuento": 13990,
+      "categoria": "ArteMateriales",
+      "imagen": "assets/img/productos/hahnemuhle_toned_watercolour_book_sketchbook_papel_beige.webp"
+    },
+
     {
       "id": 13,
       "nombre": "Grandmaster of Demonic Cultivation 01 (Mo Dao Zu Shi)",
