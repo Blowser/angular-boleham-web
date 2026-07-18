@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
+import { CarritoService } from '../../services/carrito.service';
 
 @Component({
   selector: 'app-header',
@@ -12,6 +13,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class Header {
 
-  constructor(public auth: AuthService) {}
+  constructor(public auth: AuthService,
+  public carrito: CarritoService) {}
 
 }
