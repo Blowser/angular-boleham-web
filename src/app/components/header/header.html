@@ -11,8 +11,8 @@
 
     <nav id="menu-pyme">
       <ul>
-        <li><a class="link-nav" routerLink="/proximamente">Nuestras redes</a></li>
         <li><a class="link-nav" routerLink="/proximamente">Contacto</a></li>
+        <li><a class="link-nav" routerLink="/proximamente">Visitanos</a></li>
 
         <li>
 
@@ -50,7 +50,10 @@
 
         </li>
 
-        <li><a class="link-nav" routerLink="/proximamente">Ver carrito</a></li>
+        <li><a routerLink="/carrito" class="nav-item">
+          🛒 Ver Carrito ({{ carrito.obtenerItems().length }})
+        </a>
+        </li>
       </ul>
     </nav>
 
