@@ -12,9 +12,8 @@
         <h3>{{ p.nombre }}</h3>
         <p class="precio">${{ p.precio | number }}</p>
 
-        <a [routerLink]="['/producto', p.id]" class="btn btn-primary">
-          Ver más
-        </a>
+        <a [routerLink]="['/producto', p.id]" class="btn-detalles">Ver detalles</a>
+
 
       </article>
     </div>
