@@ -17,6 +17,7 @@ import { ModificarPerfil } from './pages/modificar-perfil/modificar-perfil';
 
 import { AuthGuard } from './guards/auth.guard';
 import { Carrito } from './pages/carrito/carrito';
+import { Wishlist } from './pages/wishlist/wishlist';
 
 
 export const routes: Routes = [
@@ -31,6 +32,8 @@ export const routes: Routes = [
   { path: 'login', component: Login },
   { path: 'registro', component: Registro },
   { path: 'recuperar', component: Recuperar },
+
+  
 
   // ⭐ RUTA PRIVADA: SOLO ADMIN
   {
@@ -73,5 +76,10 @@ export const routes: Routes = [
 {
   path: 'carrito',
   loadComponent: () => import('./pages/carrito/carrito').then(m => m.Carrito)
-}
+},
+
+
+//WISHLIST
+{ path: 'wishlist', component: Wishlist },
 ]
+
