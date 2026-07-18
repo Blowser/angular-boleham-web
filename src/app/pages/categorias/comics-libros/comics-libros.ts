@@ -19,8 +19,13 @@ export class ComicsLibros implements OnInit {
   constructor(private productosService: ProductosService) {}
 
   ngOnInit(): void {
-    this.productosService.obtenerProductos().subscribe(data => {
-      this.productos = data.filter(p => p.categoria === 'ComicsLibros');
-    });
-  }
-}
+  console.log('🟦 ComicsLibros ngOnInit → componente montado');
+
+  this.productosService.obtenerProductos().subscribe(data => {
+    console.log('🟦 Categorías disponibles:', [...new Set(data.map(p => p.categoria))]);
+
+    this.productos = data.filter(p => p.categoria?.trim() === 'ComicsLibros');
+
+    console.log('🟦 ComicsLibros → productos filtrados:', this.productos.length);
+  });
+}}
