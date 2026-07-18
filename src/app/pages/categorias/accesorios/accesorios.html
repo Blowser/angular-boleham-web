@@ -3,7 +3,6 @@
   <a routerLink="/" class="btn-siguiente boton-animado">Ir al Inicio ➜</a>
 </div>
 
-
 <div class="container">
   <div class="row g-4">
 
@@ -29,9 +28,18 @@
             {{ p.descuento ? ('$' + p.descuento) : 'Sin descuento' }}
           </p>
 
-          <a [routerLink]="['/producto', p.id]" class="btn-detalles">Ver detalles</a>
+          <!-- BOTÓN DETALLES -->
+          <button class="btn-detalles" [routerLink]="['/producto', p.id]">
+            Ver detalles 🔍
+          </button>
 
-          <button class="btn-carrito">
+          <!-- WISHLIST -->
+          <button class="btn-wishlist" (click)="agregarWishlist(p)">
+            Añadir a wishlist 💖
+          </button>
+
+          <!-- CARRITO -->
+          <button class="btn-carrito" (click)="agregarAlCarrito(p)">
             Agregar al carrito 🛒
           </button>
 
