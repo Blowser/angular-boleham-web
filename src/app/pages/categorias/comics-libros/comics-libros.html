@@ -30,7 +30,8 @@
 
           <a [routerLink]="['/producto', p.id]" class="btn-detalles">Ver detalles</a>
 
-          <button class="btn-carrito">
+          <button class="btn-carrito"
+            (click)="agregarAlCarrito(p)">
             Agregar al carrito 🛒
           </button>
 
