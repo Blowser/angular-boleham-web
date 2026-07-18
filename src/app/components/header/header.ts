@@ -3,6 +3,7 @@ import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
 import { CarritoService } from '../../services/carrito.service';
+import { WishlistService } from '../../services/wishlist.service';
 
 @Component({
   selector: 'app-header',
@@ -14,6 +15,7 @@ import { CarritoService } from '../../services/carrito.service';
 export class Header {
 
   constructor(public auth: AuthService,
-  public carrito: CarritoService) {}
+  public carrito: CarritoService,
+  public wishlist: WishlistService) {}
 
 }
