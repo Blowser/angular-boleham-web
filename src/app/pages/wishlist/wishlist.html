@@ -1,1 +1,21 @@
-<p>wishlist works!</p>
+<h2 class="titulo-wishlist">💖 Wishlist</h2>
+
+<div *ngIf="obtenerItems().length === 0" class="wishlist-vacia">
+  <p>No tienes productos en tu wishlist 🥺</p>
+  <a routerLink="/" class="btn-volver">Volver al inicio</a>
+</div>
+
+<div *ngIf="obtenerItems().length > 0">
+
+  <div class="item-wishlist" *ngFor="let p of obtenerItems()">
+    <img [src]="p.imagen" class="img-wishlist" alt="{{ p.nombre }}">
+
+    <div class="info-wishlist">
+      <h3>{{ p.nombre }}</h3>
+      <p class="precio">${{ p.precio }}</p>
+
+      <button class="btn-eliminar" (click)="eliminar(p.id)">Eliminar</button>
+    </div>
+  </div>
+
+</div>
