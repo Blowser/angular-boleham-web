@@ -55,6 +55,34 @@
       "categoria": "ArteMateriales",
       "imagen": "assets/img/productos/hahnemuhle_toned_watercolour_book_sketchbook_papel_beige.webp"
     },
+    {
+      "id": 7,
+      "nombre": "Figura Maomao – The Apothecary Diaries – Poncho",
+      "descripcion": "Figura de 20 cm fabricada por Banpresto, con detalles premium y pose icónica.",
+      "precio": 34990,
+      "descuento": 32490,
+      "categoria": "PlushiesFiguras",
+      "imagen": "assets/img/productos/figura_diarios_de_la_boticaria_maomao.jpg"
+    },
+    {
+      "id": 8,
+      "nombre": "Peluche Devil Chainsaw Man - Pochita",
+      "descripcion": "El demonio motosierra más adorable del anime, suave y coleccionable.",
+      "precio": 21990,
+      "descuento": null,
+      "categoria": "PlushiesFiguras",
+      "imagen": "assets/img/productos/peluche_devil_chainsaw_man_pochita.jpg"
+    },
+    {
+      "id": 9,
+      "nombre": "Figura Naruto Shippuden ChibiMasters – Naruto Kurama",
+      "descripcion": "Figura de 10 cm con acabado premium y pose dinámica.",
+      "precio": 12990,
+      "descuento": 10990,
+      "categoria": "PlushiesFiguras",
+      "imagen": "assets/img/productos/figura_naruto_shippuden_chibimaster_naruto_kurama.jpg"
+    },
+
 
     {
       "id": 13,
