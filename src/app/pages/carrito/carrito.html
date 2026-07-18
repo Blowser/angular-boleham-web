@@ -1,0 +1,25 @@
+<h2 class="titulo-carrito">🛒 Carrito de compras</h2>
+
+<div *ngIf="obtenerItems().length === 0" class="carrito-vacio">
+  <p>Tu carrito está vacío 🥺</p>
+  <a routerLink="/" class="btn-volver">Volver al inicio</a>
+</div>
+
+<div *ngIf="obtenerItems().length > 0">
+
+  <div class="item-carrito" *ngFor="let p of obtenerItems()">
+    <img [src]="p.imagen" class="img-carrito" alt="{{ p.nombre }}">
+
+    <div class="info-carrito">
+      <h3>{{ p.nombre }}</h3>
+      <p class="precio">${{ p.precio }}</p>
+      <button class="btn-eliminar" (click)="eliminar(p.id)">Eliminar</button>
+    </div>
+  </div>
+
+  <div class="carrito-total">
+    <h3>Total: ${{ total() }}</h3>
+    <button class="btn-vaciar" (click)="vaciar()">Vaciar carrito</button>
+  </div>
+
+</div>
