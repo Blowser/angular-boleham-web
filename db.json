@@ -82,8 +82,33 @@
       "categoria": "PlushiesFiguras",
       "imagen": "assets/img/productos/figura_naruto_shippuden_chibimaster_naruto_kurama.jpg"
     },
-
-
+    {
+      "id": 10,
+      "nombre": "Marcapáginas 3D Pokémon Bulbasaur",
+      "descripcion": "Colores vibrantes, acabado con volumen y trazos suaves para ilustraciones que destacan al instante.",
+      "precio": 2990,
+      "descuento": 2490,
+      "categoria": "Accesorios",
+      "imagen": "assets/img/productos/marcapaginas_3D_pokemon_bulbasaur.webp"
+    },
+    {
+      "id": 11,
+      "nombre": "Stickers Boleham & Co.",
+      "descripcion": "Diseños kawaii, colores suaves y acabado brillante para decorar cuadernos, laptops y más.",
+      "precio": 2990,
+      "descuento": null,
+      "categoria": "Accesorios",
+      "imagen": "assets/img/productos/boleham_co_pack_stickers.jpg"
+    },
+    {
+      "id": 12,
+      "nombre": "Tarjeta de regalo $10.000",
+      "descripcion": "Regala magia pastel con la Gift Card Boleham & Co.",
+      "precio": 10000,
+      "descuento": null,
+      "categoria": "Accesorios",
+      "imagen": "assets/img/productos/boleham_co_giftcard_10k.jpg"
+    },
     {
       "id": 13,
       "nombre": "Grandmaster of Demonic Cultivation 01 (Mo Dao Zu Shi)",
