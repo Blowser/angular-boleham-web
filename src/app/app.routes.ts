@@ -16,6 +16,8 @@ import { MiPerfil } from './pages/mi-perfil/mi-perfil';
 import { ModificarPerfil } from './pages/modificar-perfil/modificar-perfil';
 
 import { AuthGuard } from './guards/auth.guard';
+import { Carrito } from './pages/carrito/carrito';
+
 
 export const routes: Routes = [
   { path: '', component: Home },
@@ -65,4 +67,11 @@ export const routes: Routes = [
   path: 'producto/:id',
   loadComponent: () => import('./pages/producto-detalles/producto-detalles').then(m => m.ProductoDetalles)
 },
+
+
+//CARRITO DE COMPRAS
+{
+  path: 'carrito',
+  loadComponent: () => import('./pages/carrito/carrito').then(m => m.Carrito)
+}
 ]
