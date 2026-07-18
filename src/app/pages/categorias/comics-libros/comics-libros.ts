@@ -4,6 +4,7 @@ import { RouterLink } from '@angular/router';
 
 import { ProductosService } from '../../../services/productos.service';
 import { Producto } from '../../../models/producto.model';
+import { CarritoService } from '../../../services/carrito.service';
 
 @Component({
   selector: 'app-comics-libros',
@@ -16,16 +17,25 @@ export class ComicsLibros implements OnInit {
 
   productos: Producto[] = [];
 
-  constructor(private productosService: ProductosService) {}
+  constructor(
+    private productosService: ProductosService,
+    private carrito: CarritoService
+  ) {}
 
   ngOnInit(): void {
-  console.log('🟦 ComicsLibros ngOnInit → componente montado');
+    console.log('🟦 ComicsLibros ngOnInit → componente montado');
 
-  this.productosService.obtenerProductos().subscribe(data => {
-    console.log('🟦 Categorías disponibles:', [...new Set(data.map(p => p.categoria))]);
+    this.productosService.obtenerProductos().subscribe(data => {
+      console.log('🟦 Categorías disponibles:', [...new Set(data.map(p => p.categoria))]);
 
-    this.productos = data.filter(p => p.categoria?.trim() === 'ComicsLibros');
+      this.productos = data.filter(p => p.categoria?.trim() === 'ComicsLibros');
 
-    console.log('🟦 ComicsLibros → productos filtrados:', this.productos.length);
-  });
-}}
+      console.log('🟦 ComicsLibros → productos filtrados:', this.productos.length);
+    });
+  }
+
+  agregarAlCarrito(producto: Producto): void {
+    this.carrito.agregar(producto);
+    console.log('🛒 Producto agregado:', producto.nombre);
+  }
+}
