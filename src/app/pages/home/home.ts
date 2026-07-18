@@ -15,7 +15,7 @@ import { Producto } from '../../models/producto.model';
   ],
   templateUrl: './home.html',
   styleUrls: ['./home.scss'],
-  encapsulation: ViewEncapsulation.None
+  //encapsulation: ViewEncapsulation.None
 })
 export class Home implements OnInit {
 
