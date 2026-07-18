@@ -1,6 +1,34 @@
 {
   "productos": [
     {
+      "id": 1,
+      "nombre": "Manhua: Los diarios de la boticaria",
+      "descripcion": "Una joven llamada Maomao trabaja como sirvienta...",
+      "precio": 15490,
+      "descuento": 14240,
+      "categoria": "ComicsLibros",
+      "imagen": "assets/img/productos/los_diarios_de_la_boticaria_01.jpg"
+    },
+    {
+      "id": 2,
+      "nombre": "Manhwa: Solo Leveling",
+      "descripcion": "¡Adéntrate en el fascinante mundo de Solo Leveling!",
+      "precio": 24990,
+      "descuento": null,
+      "categoria": "ComicsLibros",
+      "imagen": "assets/img/productos/solo_leveling_01.webp"
+    },
+    {
+      "id": 3,
+      "nombre": "Manga: Dan da Dan",
+      "descripcion": "Historia única de extraterrestres y fantasmas...",
+      "precio": 9990,
+      "descuento": 4490,
+      "categoria": "ComicsLibros",
+      
+      "imagen": "assets/img/productos/dan_da_dan_01.webp"
+    },
+    {
       "id": 13,
       "nombre": "Grandmaster of Demonic Cultivation 01 (Mo Dao Zu Shi)",
       "categoria": "Preventas",
