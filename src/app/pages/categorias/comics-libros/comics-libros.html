@@ -28,7 +28,8 @@
             {{ p.descuento ? ('$' + p.descuento) : 'Sin descuento' }}
           </p>
 
-          <a routerLink="/producto/{{ p.id }}" class="btn-detalles">
+          <a [routerLink]="['/producto', p.id]" class="btn-detalles">
+
             Ver detalles
           </a>
 
