@@ -49,16 +49,19 @@
   <form (ngSubmit)="guardarProducto()">
 
     <input class="form-control mb-2" type="text" placeholder="Nombre"
-           [(ngModel)]="formularioProducto.nombre" name="nombre" required>
+          [(ngModel)]="formularioProducto.nombre" name="nombre" required>
 
     <input class="form-control mb-2" type="text" placeholder="Categoría"
-           [(ngModel)]="formularioProducto.categoria" name="categoria" required>
+          [(ngModel)]="formularioProducto.categoria" name="categoria" required>
 
     <input class="form-control mb-2" type="number" placeholder="Precio"
-           [(ngModel)]="formularioProducto.precio" name="precio" required>
+          [(ngModel)]="formularioProducto.precio" name="precio" required>
+
+    <input class="form-control mb-2" type="number" placeholder="Descuento (opcional)"
+          [(ngModel)]="formularioProducto.descuento" name="descuento">
 
     <input class="form-control mb-2" type="text" placeholder="Imagen (archivo)"
-           [(ngModel)]="formularioProducto.imagen" name="imagen" required>
+          [(ngModel)]="formularioProducto.imagen" name="imagen" required>
 
     <textarea class="form-control mb-2" placeholder="Descripción"
               [(ngModel)]="formularioProducto.descripcion" name="descripcion" required></textarea>
@@ -68,6 +71,7 @@
     </button>
 
   </form>
+
 </div>
 
 <!-- LISTA DE PRODUCTOS -->
