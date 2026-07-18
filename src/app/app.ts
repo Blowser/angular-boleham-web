@@ -7,7 +7,6 @@ import { Navbar } from './components/navbar/navbar';
 import { Footer } from './components/footer/footer';
 
 // ⭐ ESTA IMPORTACIÓN AHORA SÍ FUNCIONA
-import { RouterDebugService } from './services/router-debug.service';
 
 @Component({
   selector: 'app-root',
@@ -31,7 +30,6 @@ export class App implements OnInit, AfterViewInit {
   }
 
   // ⭐ ESTO ACTIVA EL SERVICIO
-  constructor(private debug: RouterDebugService) {}
 
   ngOnInit(): void {
     console.log('🌐 AppComponent ngOnInit → root montado');
