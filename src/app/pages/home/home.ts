@@ -10,12 +10,12 @@ import { Producto } from '../../models/producto.model';
   standalone: true,
   imports: [
     RouterLink,
-    CommonModule,   // ← Necesario para *ngFor y *ngIf
-    DecimalPipe     // ← Necesario para el pipe number
+    CommonModule,
+    DecimalPipe
   ],
   templateUrl: './home.html',
   styleUrls: ['./home.scss'],
-  encapsulation: ViewEncapsulation.None   // ⭐ ESTA ES LA CLAVE
+  encapsulation: ViewEncapsulation.None
 })
 export class Home implements OnInit {
 
@@ -24,8 +24,14 @@ export class Home implements OnInit {
   constructor(private productosService: ProductosService) {}
 
   ngOnInit(): void {
+    console.log('🏠 Home ngOnInit → montado');
+
     this.productosService.obtenerProductos().subscribe((data: Producto[]) => {
+      console.log('🏠 Home → productos recibidos:', data.length);
+
       this.preventas = data.filter((p: Producto) => p.categoria === 'Preventas');
+
+      console.log('🏠 Home → preventas filtradas:', this.preventas.length);
     });
   }
 }
