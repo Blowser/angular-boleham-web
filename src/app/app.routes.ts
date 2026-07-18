@@ -53,9 +53,16 @@ export const routes: Routes = [
     data: { rol: 'cliente' }
   },
 
-  // ⭐ Preventas es pública
+  // Preventas es pública
   {
     path: 'preventas',
     loadComponent: () => import('./pages/preventas/preventas').then(m => m.Preventas)
-  }
-];
+  },
+
+
+//DETALLES PRODUCTOS
+{
+  path: 'producto/:id',
+  loadComponent: () => import('./pages/producto-detalles/producto-detalles').then(m => m.ProductoDetalles)
+},
+]
