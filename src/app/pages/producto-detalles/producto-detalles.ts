@@ -18,6 +18,7 @@ import { AuthService } from '../../services/auth.service';
 export class ProductoDetalles implements OnInit {
 
   producto!: Producto;
+  id!: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -28,10 +29,13 @@ export class ProductoDetalles implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.id = Number(this.route.snapshot.paramMap.get('id'));
+    this.cargarProducto();
+  }
 
+  cargarProducto(): void {
     this.productosService.obtenerProductos().subscribe(data => {
-      this.producto = data.find(p => p.id === id)!;
+      this.producto = data.find(p => p.id === this.id)!;
     });
   }
 
