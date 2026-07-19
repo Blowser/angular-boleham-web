@@ -17,8 +17,9 @@ import { AuthService } from '../../services/auth.service';
 })
 export class ProductoDetalles implements OnInit {
 
-  producto!: Producto;
+  producto: Producto | null = null;
   id!: number;
+  cargando = true;
 
   constructor(
     private route: ActivatedRoute,
@@ -34,8 +35,11 @@ export class ProductoDetalles implements OnInit {
   }
 
   cargarProducto(): void {
+    this.cargando = true;
+
     this.productosService.obtenerProductos().subscribe(data => {
-      this.producto = data.find(p => p.id === this.id)!;
+      this.producto = data.find(p => p.id === this.id) || null;
+      this.cargando = false;
     });
   }
 
@@ -44,6 +48,12 @@ export class ProductoDetalles implements OnInit {
       alert('Debes iniciar sesión para agregar al carrito.');
       return;
     }
+
+    if (!this.producto) {
+      alert('El producto aún no está cargado.');
+      return;
+    }
+
     this.carrito.agregar(this.producto);
   }
 
@@ -52,6 +62,13 @@ export class ProductoDetalles implements OnInit {
       alert('Debes iniciar sesión para usar la wishlist.');
       return;
     }
+
+    if (!this.producto) {
+      alert('El producto aún no está cargado.');
+      return;
+    }
+
     this.wishlist.agregar(this.producto);
   }
 }
+
