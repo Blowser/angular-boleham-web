@@ -27,7 +27,7 @@ export class AuthService {
           nombreCompleto: 'Administrador del sistema',
           nombreUsuario: 'admin',
           correo: 'admin@admin.cl',
-          clave: 'Admin123', // cumple validación
+          clave: 'Admin123',
           fechaNacimiento: '1990-01-01',
           direccion: 'Oficina central',
           rol: 'admin'
@@ -64,6 +64,16 @@ export class AuthService {
     return this.sesion?.rol === 'admin';
   }
 
+  // ✔ NUEVO: saber si está logueado
+  estaLogueado(): boolean {
+    return this.sesion?.logueado === true;
+  }
+
+  // ✔ NUEVO: obtener usuario actual
+  obtenerUsuarioActual(): SesionUsuario | null {
+    return this.sesion;
+  }
+
   // -------------------------------------------------------------------------
   // LOGIN
   // -------------------------------------------------------------------------
@@ -85,7 +95,7 @@ export class AuthService {
     const sesion: SesionUsuario = {
       id: usuario.id,
       nombreCompleto: usuario.nombreCompleto,
-      nombreUsuario: usuario.nombreUsuario,   // ← AGREGAR ESTO
+      nombreUsuario: usuario.nombreUsuario,
       correo: usuario.correo,
       rol: usuario.rol,
       logueado: true
@@ -151,6 +161,12 @@ export class AuthService {
 
   cerrarSesion(): void {
     if (!isPlatformBrowser(this.platformId)) return;
+
+    // borrar sesión
     localStorage.removeItem(this.keySesion);
+
+    // opcional: limpiar carritos/wishlists de invitado
+    localStorage.removeItem('carrito_guest');
+    localStorage.removeItem('wishlist_guest');
   }
 }
