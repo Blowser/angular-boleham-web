@@ -1,21 +1,50 @@
+<div class="nav-interna">
+  <a routerLink="/" class="btn-volver boton-animado">⬅ Volver al Inicio</a>
+  <a routerLink="/categorias/comics-libros" class="btn-siguiente boton-animado">Ir a Comics & Libros ➜</a>
+</div>
+
 <section class="container mt-5 mb-5">
 
   <h2 class="titulo-articulo text-center mb-4">Preventas</h2>
 
   <div class="row g-4">
 
-    <div class="col-12 col-md-6 col-lg-3" *ngFor="let p of preventas">
-      <article class="producto-card aparecer">
+    <div class="col-12 col-md-6 col-lg-4"
+         *ngFor="let p of productos">
 
-        <img [src]="'/assets/img/preventas/' + p.imagen" [alt]="p.nombre">
+      <article class="card-producto aparecer">
+        <div class="card-producto-contenido">
 
-        <h3>{{ p.nombre }}</h3>
-        <p class="precio">${{ p.precio | number }}</p>
+          <img [src]="p.imagen"
+               [alt]="p.nombre"
+               class="img-producto">
 
-        <a [routerLink]="['/producto', p.id]" class="btn-detalles">Ver detalles</a>
+          <h3 class="nombre-producto">{{ p.nombre }}</h3>
 
+          <p class="precio-producto">${{ p.precio }}</p>
 
+          <p class="descuento-producto"
+             [class.con-descuento]="p.descuento"
+             [class.sin-descuento]="!p.descuento">
+            {{ p.descuento ? ('$' + p.descuento) : 'Sin descuento' }}
+          </p>
+
+          <button class="btn-detalles" [routerLink]="['/producto', p.id, 'detalles']">
+            Ver detalles 🔍
+          </button>
+
+          <button class="btn-wishlist" (click)="agregarWishlist(p)">
+            Añadir a wishlist 💖
+          </button>
+
+          <button class="btn-carrito"
+            (click)="agregarAlCarrito(p)">
+            Agregar al carrito 🛒
+          </button>
+
+        </div>
       </article>
+
     </div>
 
   </div>
