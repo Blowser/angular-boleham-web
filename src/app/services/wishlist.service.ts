@@ -1,13 +1,24 @@
 import { Injectable } from '@angular/core';
 import { Producto } from '../models/producto.model';
+import { AuthService } from './auth.service';
 
 @Injectable({ providedIn: 'root' })
 export class WishlistService {
 
   private items: Producto[] = [];
+  private storageKey = 'wishlist_guest';
 
-  constructor() {
-    const guardado = localStorage.getItem('wishlist');
+  constructor(private auth: AuthService) {
+
+    const usuario = this.auth.obtenerUsuarioActual();
+
+    // Clave dinámica por usuario
+    this.storageKey = usuario
+      ? `wishlist_${usuario.id}`
+      : 'wishlist_guest';
+
+    // Cargar wishlist del usuario
+    const guardado = localStorage.getItem(this.storageKey);
     if (guardado) {
       this.items = JSON.parse(guardado);
     }
@@ -31,6 +42,6 @@ export class WishlistService {
   }
 
   private guardar(): void {
-    localStorage.setItem('wishlist', JSON.stringify(this.items));
+    localStorage.setItem(this.storageKey, JSON.stringify(this.items));
   }
 }
