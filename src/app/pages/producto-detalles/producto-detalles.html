@@ -16,14 +16,16 @@
 
     <p class="descripcion">{{ producto.descripcion }}</p>
 
-    <button (click)="cargarProducto()">Recargar detalles 🔄</button>
+  </div>
 
+  <!-- BOTÓN SIEMPRE VISIBLE -->
+  <div class="acciones">
+    <button (click)="cargarProducto()">Recargar detalles 🔄</button>
   </div>
 
   <!-- ERROR -->
   <div *ngIf="!cargando && !producto">
     <p>No se encontró el producto. Intenta recargar.</p>
-    <button (click)="cargarProducto()">Reintentar 🔄</button>
   </div>
 
 </div>
