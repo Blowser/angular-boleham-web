@@ -1,41 +1,25 @@
-<section class="seccion-detalles" *ngIf="producto">
+<div class="detalles-container" *ngIf="producto">
 
-  <a routerLink="/" class="btn-volver boton-animado">⬅ Volver al inicio</a>
+  <img [src]="producto.imagen" class="detalles-img">
 
-  <div class="detalles-container">
+  <h2>{{ producto.nombre }}</h2>
 
-    <img [src]="producto.imagen"
-         [alt]="producto.nombre"
-         class="img-detalle">
+  <p class="precio">${{ producto.precio }}</p>
 
-    <div class="info-detalle">
+  <p class="categoria">Categoría: {{ producto.categoria }}</p>
 
-      <h2>{{ producto.nombre }}</h2>
+  <p class="descripcion">{{ producto.descripcion }}</p>
 
-      <p class="categoria-detalle">
-        Categoría: {{ producto.categoria }}
-      </p>
+  <p class="descuento" *ngIf="producto.descuento">
+    Descuento: ${{ producto.descuento }}
+  </p>
 
-      <p class="descripcion-detalle">
-        {{ producto.descripcion }}
-      </p>
+  <button class="btn-carrito" (click)="agregarCarrito()">
+    Agregar al carrito 🛒
+  </button>
 
-      <p class="precio-detalle">
-        Precio: ${{ producto.precio }}
-      </p>
+  <button class="btn-wishlist" (click)="agregarWishlist()">
+    Añadir a wishlist 💖
+  </button>
 
-      <p class="descuento-detalle"
-         [class.con-descuento]="producto.descuento"
-         [class.sin-descuento]="!producto.descuento">
-        {{ producto.descuento ? ('$' + producto.descuento) : 'Sin descuento' }}
-      </p>
-
-      <button class="btn-carrito">
-        Agregar al carrito 🛒
-      </button>
-
-    </div>
-
-  </div>
-
-</section>
+</div>
