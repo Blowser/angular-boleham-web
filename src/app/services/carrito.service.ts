@@ -1,14 +1,24 @@
 import { Injectable } from '@angular/core';
 import { Producto } from '../models/producto.model';
+import { AuthService } from './auth.service';
 
 @Injectable({ providedIn: 'root' })
 export class CarritoService {
 
   private items: Producto[] = [];
+  private storageKey = 'carrito_guest';
 
-  constructor() {
-    // Cargar desde localStorage si existe
-    const guardado = localStorage.getItem('carrito');
+  constructor(private auth: AuthService) {
+
+    const usuario = this.auth.obtenerUsuarioActual();
+
+    // Clave dinámica por usuario
+    this.storageKey = usuario
+      ? `carrito_${usuario.id}`
+      : 'carrito_guest';
+
+    // Cargar carrito del usuario
+    const guardado = localStorage.getItem(this.storageKey);
     if (guardado) {
       this.items = JSON.parse(guardado);
     }
@@ -38,6 +48,6 @@ export class CarritoService {
   }
 
   private guardar(): void {
-    localStorage.setItem('carrito', JSON.stringify(this.items));
+    localStorage.setItem(this.storageKey, JSON.stringify(this.items));
   }
 }
