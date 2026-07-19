@@ -37,9 +37,15 @@ export class ProductoDetalles implements OnInit {
   cargarProducto(): void {
     this.cargando = true;
 
-    this.productosService.obtenerProductos().subscribe(data => {
-      this.producto = data.find(p => p.id === this.id) || null;
-      this.cargando = false;
+    this.productosService.obtenerProducto(this.id).subscribe({
+      next: (prod) => {
+        this.producto = prod;
+        this.cargando = false;
+      },
+      error: () => {
+        this.producto = null;
+        this.cargando = false;
+      }
     });
   }
 
@@ -71,4 +77,3 @@ export class ProductoDetalles implements OnInit {
     this.wishlist.agregar(this.producto);
   }
 }
-
