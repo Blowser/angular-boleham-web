@@ -1,30 +1,29 @@
-<div class="detalles-container" *ngIf="producto">
+<div class="detalles-container">
 
-  <img [src]="producto.imagen" class="detalles-img">
+  <!-- LOADING -->
+  <div *ngIf="cargando">
+    <p>Cargando detalles del producto...</p>
+  </div>
 
-  <h2>{{ producto.nombre }}</h2>
+  <!-- CONTENIDO -->
+  <div *ngIf="!cargando && producto">
 
-  <p class="precio">${{ producto.precio }}</p>
+    <h2>{{ producto.nombre }}</h2>
 
-  <p class="categoria">Categoría: {{ producto.categoria }}</p>
+    <img [src]="producto.imagen" class="detalles-img">
 
-  <p class="descripcion">{{ producto.descripcion }}</p>
+    <p class="precio">${{ producto.precio }}</p>
 
-  <p class="descuento" *ngIf="producto.descuento">
-    Descuento: ${{ producto.descuento }}
-  </p>
+    <p class="descripcion">{{ producto.descripcion }}</p>
 
-  <button class="btn-carrito" (click)="agregarCarrito()">
-    Agregar al carrito 🛒
-  </button>
+    <button (click)="cargarProducto()">Recargar detalles 🔄</button>
 
-  <button class="btn-wishlist" (click)="agregarWishlist()">
-    Añadir a wishlist 💖
-  </button>
+  </div>
 
-  <!-- ⭐ BOTÓN PARA RECARGAR LOS DETALLES -->
-  <button class="btn-recargar" (click)="cargarProducto()">
-    Recargar detalles 🔄
-  </button>
+  <!-- ERROR -->
+  <div *ngIf="!cargando && !producto">
+    <p>No se encontró el producto. Intenta recargar.</p>
+    <button (click)="cargarProducto()">Reintentar 🔄</button>
+  </div>
 
 </div>
