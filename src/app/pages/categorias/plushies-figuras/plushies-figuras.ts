@@ -18,6 +18,7 @@ import { AuthService } from '../../../services/auth.service';
 export class PlushiesFiguras implements OnInit {
 
   productos: Producto[] = [];
+  cargando = true; // ⭐ Necesario para fallback
 
   constructor(
     private productosService: ProductosService,
@@ -27,9 +28,25 @@ export class PlushiesFiguras implements OnInit {
   ) {}
 
   ngOnInit(): void {
+
     this.productosService.obtenerProductos().subscribe(data => {
       this.productos = data.filter(p => p.categoria === 'PlushiesFiguras');
+      this.cargando = false;
     });
+
+    // ⭐ Fallback automático si json-server está lento
+    setTimeout(() => {
+      if (this.cargando) {
+        console.log('🔄 Fallback → recargando productos PlushiesFiguras');
+
+        this.productosService.obtenerProductos().subscribe(data => {
+          this.productos = data.filter(p => p.categoria === 'PlushiesFiguras');
+          this.cargando = false;
+
+          console.log('🟦 PlushiesFiguras → fallback completado:', this.productos.length);
+        });
+      }
+    }, 1500);
   }
 
   agregarAlCarrito(producto: Producto): void {
