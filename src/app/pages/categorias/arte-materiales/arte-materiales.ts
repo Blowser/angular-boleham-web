@@ -18,22 +18,38 @@ import { AuthService } from '../../../services/auth.service';
 export class ArteMateriales implements OnInit {
 
   productos: Producto[] = [];
+  cargando = true; // ⭐ Necesario para fallback
 
   constructor(
     private productosService: ProductosService,
     private carrito: CarritoService,
     private wishlist: WishlistService,
-    public auth: AuthService   // ⭐ NECESARIO PARA BLOQUEAR
+    public auth: AuthService
   ) {}
 
   ngOnInit(): void {
+
     this.productosService.obtenerProductos().subscribe(data => {
       this.productos = data.filter(p => p.categoria === 'ArteMateriales');
+      this.cargando = false;
     });
+
+    // ⭐ Fallback automático si json-server está lento
+    setTimeout(() => {
+      if (this.cargando) {
+        console.log('🔄 Fallback → recargando productos ArteMateriales');
+
+        this.productosService.obtenerProductos().subscribe(data => {
+          this.productos = data.filter(p => p.categoria === 'ArteMateriales');
+          this.cargando = false;
+
+          console.log('🟦 ArteMateriales → fallback completado:', this.productos.length);
+        });
+      }
+    }, 1500);
   }
 
   agregarAlCarrito(producto: Producto): void {
-    // ⭐ BLOQUEO PARA INVITADOS
     if (!this.auth.estaLogueado()) {
       alert('Debes iniciar sesión para agregar productos al carrito.');
       return;
@@ -44,7 +60,6 @@ export class ArteMateriales implements OnInit {
   }
 
   agregarWishlist(producto: Producto): void {
-    // ⭐ BLOQUEO PARA INVITADOS
     if (!this.auth.estaLogueado()) {
       alert('Debes iniciar sesión para usar la wishlist.');
       return;
