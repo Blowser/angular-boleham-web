@@ -1,0 +1,13 @@
+<div class="preview-container" *ngIf="producto">
+
+  <img [src]="producto.imagen" class="preview-img">
+
+  <h2>{{ producto.nombre }}</h2>
+
+  <p class="precio">${{ producto.precio }}</p>
+
+  <button class="btn-detalles" [routerLink]="['/producto', producto.id, 'detalles']">
+    Ver más detalles 🔍
+  </button>
+
+</div>
