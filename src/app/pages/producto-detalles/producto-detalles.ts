@@ -32,6 +32,13 @@ export class ProductoDetalles implements OnInit {
   ngOnInit(): void {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
     this.cargarProducto();
+
+    // ⭐ Fallback automático si json-server está lento
+    setTimeout(() => {
+      if (!this.producto) {
+        this.cargarProducto();
+      }
+    }, 1500);
   }
 
   cargarProducto(): void {
