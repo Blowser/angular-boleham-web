@@ -65,13 +65,6 @@ export const routes: Routes = [
   },
 
 
-//DETALLES PRODUCTOS
-{
-  path: 'producto/:id',
-  loadComponent: () => import('./pages/producto-detalles/producto-detalles').then(m => m.ProductoDetalles)
-},
-
-
 //CARRITO DE COMPRAS
 {
   path: 'carrito',
@@ -81,5 +74,14 @@ export const routes: Routes = [
 
 //WISHLIST
 { path: 'wishlist', component: Wishlist },
-]
 
+//PARA VER DETALLES DE LOS PRODUCTOS
+{
+  path: 'producto/:id',
+  loadComponent: () => import('./pages/producto-preview/producto-preview').then(m => m.ProductoPreview)
+},
+{
+  path: 'producto/:id/detalles',
+  loadComponent: () => import('./pages/producto-detalles/producto-detalles').then(m => m.ProductoDetalles)
+},
+]
